@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      position: relative;
+      padding: var(--space-2xl) var(--space-2xl) var(--space-3xl);
+      background: var(--ivory-tint);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      min-height: calc(var(--page-h) - var(--space-2xl) - var(--space-3xl));
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .venue-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+      width: 100%;
+      padding-top: var(--space-lg);
+    }
+
+    .heading,
+    .route-label {
+      font-family: var(--font-sans);
+      font-size: var(--type-label);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .heading {
+      color: var(--burgundy);
+      margin-bottom: var(--space-sm);
+    }
+
+    .venue-name {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .venue-location,
+    .route-note {
+      font-family: var(--font-sans);
+      font-size: var(--type-label);
+      color: var(--text-mid);
+    }
+
+    .route-rule {
+      width: var(--space-4xl);
+      height: 1px;
+      margin-top: var(--space-2xl);
+      background: var(--green-soft);
+    }
+
+    .route-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .route-label {
+      color: var(--green-deep);
+    }
+
+    .action-button {
+      width: min(100%, 320px);
+    }
+
+    .floral-bot {
+      position: absolute;
+      bottom: var(--space-2xl);
+      right: 0;
+      width: 260px;
+      height: 104px;
+      background: url('../assets/botanical-ground.svg') right bottom / cover no-repeat;
+      opacity: 0.16;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="venue-block">
+      <div class="heading">Ceremony Venue</div>
+      <div class="venue-name text-safe">Wesley Cathedral</div>
+      <div class="venue-location text-safe">Sunyani, Ghana</div>
+      <div class="route-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="route-actions">
+      <div class="route-label">Directions</div>
+      <div class="route-note">Use Google Maps for turn-by-turn directions.</div>
+      <button class="action-button action-map pdf-action" id="loc-link" type="button" aria-label="Open Wesley Cathedral in Google Maps">Open in Google Maps</button>
+    </div>
+  </div>
+  <div class="floral-bot"></div>
+</body>
+</html>

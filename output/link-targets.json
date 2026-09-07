@@ -7,84 +7,24 @@
       "selector": "#envelope-target",
       "target": {
         "type": "internal",
-        "pageIndex": 2
+        "pageIndex": 1
       },
       "x": 135,
-      "y": 439.1000061035156,
+      "y": 433.8999938964844,
       "width": 280,
       "height": 140
     },
     {
-      "pageIndex": 1,
-      "selector": "#invitation-badge",
-      "target": {
-        "type": "internal",
-        "pageIndex": 2
-      },
-      "x": 244.0625,
-      "y": 699.2000122070312,
-      "width": 61.86249923706055,
-      "height": 56
-    },
-    {
-      "pageIndex": 3,
-      "selector": "#rsvp-invite",
-      "target": {
-        "type": "external",
-        "url": "https://forms.gle/tnZxmdZ5R93eFUj19"
-      },
-      "x": 236.6125030517578,
-      "y": 569.6000366210938,
-      "width": 76.76250457763672,
-      "height": 27
-    },
-    {
-      "pageIndex": 4,
-      "selector": "#rsvp-btn-detail",
-      "target": {
-        "type": "external",
-        "url": "https://forms.gle/tnZxmdZ5R93eFUj19"
-      },
-      "x": 258,
-      "y": 785,
-      "width": 34,
-      "height": 47
-    },
-    {
-      "pageIndex": 5,
-      "selector": "#map-link",
-      "target": {
-        "type": "external",
-        "url": "https://maps.app.goo.gl/fb5JWYKorDAH574f7"
-      },
-      "x": 28,
-      "y": 70.80000305175781,
-      "width": 494,
-      "height": 233.1999969482422
-    },
-    {
-      "pageIndex": 5,
+      "pageIndex": 2,
       "selector": "#loc-link",
       "target": {
         "type": "external",
         "url": "https://maps.app.goo.gl/fb5JWYKorDAH574f7"
       },
-      "x": 222.27500915527344,
-      "y": 335,
-      "width": 41.4375,
-      "height": 46
-    },
-    {
-      "pageIndex": 5,
-      "selector": "#rsvp-route",
-      "target": {
-        "type": "external",
-        "url": "https://forms.gle/tnZxmdZ5R93eFUj19"
-      },
-      "x": 293.7124938964844,
-      "y": 335,
-      "width": 34,
-      "height": 46
+      "x": 48,
+      "y": 730,
+      "width": 320,
+      "height": 56
     }
   ]
 }

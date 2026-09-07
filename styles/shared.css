@@ -1,6 +1,6 @@
 /* ===== Wedding Invite — Premium Shared Styles ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   /* Editorial wedding palette: ceremony burgundy, botanical green, warm ivory. */
@@ -18,14 +18,17 @@
   --text-dark: #352326;
   --text-mid: #625154;
   --text-light: #897578;
+  --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
-  --space-md: 20px;
-  --space-lg: 32px;
-  --space-xl: 48px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
 
   /* Fonts */
-  --font-script: 'Great Vibes', cursive;
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Montserrat', 'Segoe UI', sans-serif;
   --type-caption: 0.6875rem;
@@ -70,44 +73,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle linen texture */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23B89CC8' fill-opacity='0.025'%3E%3Cpath d='M0 0h1v1H0zM40 0h1v1h-1zM0 40h1v1H0zM40 40h1v1h-1zM20 20h1v1h-1zM60 20h1v1h-1zM20 60h1v1h-1zM60 60h1v1h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ===== Typography ===== */
-.script-lg {
-  font-family: var(--font-script);
-  color: var(--burgundy);
-  line-height: 1.1;
-}
-.serif-elegant {
-  font-family: var(--font-serif);
-  font-weight: 300;
-  color: var(--text-dark);
-}
-.sans-label {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: var(--type-label);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--green-deep);
-}
-.sans-body {
-  font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: var(--type-body);
-  color: var(--text-mid);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-}
-
 /* ===== Decorative Elements ===== */
 .ornament {
   display: flex;
@@ -132,13 +97,6 @@ body::before {
   flex-shrink: 0;
 }
 
-.gold-line {
-  width: 100px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green-soft), transparent);
-  margin: 10px auto;
-}
-
 /* ===== Primary PDF Actions ===== */
 .action-button {
   width: 100%;
@@ -156,11 +114,4 @@ body::before {
 .action-map {
   background: var(--green-deep);
   color: var(--bg-white);
-}
-
-/* ===== Floral Image Placeholders ===== */
-.floral {
-  position: absolute;
-  background-repeat: no-repeat;
-  pointer-events: none;
 }
