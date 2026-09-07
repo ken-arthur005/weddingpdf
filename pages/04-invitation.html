@@ -17,25 +17,25 @@
     .floral-tl {
       position: absolute; top: 0; left: 0;
       width: 150px; height: 150px;
-      background: url('../assets/floralbg.png') center / cover no-repeat;
+       background: url('../assets/botanical-corner.svg') center / cover no-repeat;
       opacity: 0.4;
     }
     .floral-tr {
       position: absolute; top: 0; right: 0;
       width: 150px; height: 150px;
-      background: url('../assets/floralbg2.png') center / cover no-repeat;
+       background: url('../assets/botanical-ground.svg') center / cover no-repeat;
       opacity: 0.4;
     }
     .floral-bl {
       position: absolute; bottom: 60px; left: 0;
       width: 150px; height: 150px;
-      background: url('../assets/floralbg2.png') center / cover no-repeat;
+       background: url('../assets/botanical-ground.svg') center / cover no-repeat;
       opacity: 0.4;
     }
     .floral-br {
       position: absolute; bottom: 60px; right: 0;
       width: 150px; height: 150px;
-      background: url('../assets/floralbg.png') center / cover no-repeat;
+       background: url('../assets/botanical-corner.svg') center / cover no-repeat;
       opacity: 0.4;
     }
 
@@ -70,7 +70,7 @@
       font-family: var(--font-serif);
       font-size: 14px; font-weight: 300;
       font-style: italic;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       margin-bottom: 2px;
     }
     .name-serif {
@@ -87,7 +87,7 @@
       font-size: 8px; font-weight: 400;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       line-height: 2.2;
       margin-bottom: 16px;
     }
@@ -105,7 +105,7 @@
     .venue { margin-bottom: 4px; }
     .venue svg.pin {
       width: 18px; height: 18px;
-      fill: var(--purple-mid);
+       fill: var(--green);
       margin-bottom: 6px;
     }
     .venue .v-name {
@@ -129,12 +129,12 @@
       font-size: 8px; font-weight: 500;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--purple-mid);
+       color: var(--burgundy);
     }
     .reception .r-script {
       font-family: var(--font-script);
       font-size: 32px;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       line-height: 1.1;
     }
     .reception .r-at {
@@ -142,7 +142,7 @@
       font-size: 8px; font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--purple-mid);
+       color: var(--burgundy);
     }
     .reception .r-venue {
       font-family: var(--font-sans);
@@ -174,13 +174,13 @@
     .verse .v-text {
       font-family: var(--font-script);
       font-size: 17px;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       line-height: 1.4;
     }
     .verse .v-ref {
       font-family: var(--font-serif);
       font-size: 16px; font-weight: 600;
-      color: var(--purple-deep);
+       color: var(--burgundy-deep);
       margin-top: 4px;
     }
   </style>
@@ -196,16 +196,16 @@
 
     <div class="mini-mono">
       <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-        <text x="6" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#8B6FA6" opacity="0.8">K</text>
-        <text x="20" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#A67FBF" opacity="0.7">A</text>
+        <text x="6" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#4B1823" opacity="0.8">K</text>
+        <text x="20" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#315342" opacity="0.78">L</text>
       </svg>
     </div>
 
     <div class="together">Together with their families</div>
 
-    <div class="name-script">Kingsley Asare Baafi</div>
+    <div class="name-script text-safe">Kingsley Asare Baafi</div>
     <div class="name-and">and</div>
-    <div class="name-serif">Mary-Anne Smith</div>
+    <div class="name-serif text-safe">Lawrencia Smith</div>
 
     <div class="invite">Invite you to their wedding<br>celebration</div>
 
@@ -215,7 +215,7 @@
 
     <div class="venue">
       <svg class="pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <div class="v-name">Wesley Cathedral</div>
+      <div class="v-name text-safe">Wesley Cathedral</div>
       <div class="v-time">Sunyani · 10:00 AM</div>
     </div>
 
@@ -223,15 +223,15 @@
       <div class="r-label">Reception</div>
       <div class="r-script">to follow</div>
       <div class="r-at">at</div>
-      <div class="r-venue">Wesley Cathedral</div>
+      <div class="r-venue text-safe">Wesley Cathedral</div>
     </div>
 
     <div class="ornament"><div class="diamond"></div></div>
 
-    <div class="rsvp">
+    <button class="rsvp pdf-action" id="rsvp-invite" type="button" aria-label="Open RSVP form">
       <div class="rsvp-title">RSVP</div>
       <div class="rsvp-phone">+233 55 101 1789</div>
-    </div>
+    </button>
 
     <div class="verse">
       <div class="v-text">"I have found the one whom my heart loves"</div>

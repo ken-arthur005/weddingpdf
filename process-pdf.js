@@ -4,13 +4,7 @@ const path = require('path');
 
 const INPUT_PDF = path.join(__dirname, 'output', 'wedding-invite-raw.pdf');
 const OUTPUT_PDF = path.join(__dirname, 'output', 'wedding-invite.pdf');
-
-const RSVP_URL = 'https://forms.gle/tnZxmdZ5R93eFUj19';
-const MAPS_URL = 'https://maps.app.goo.gl/fb5JWYKorDAH574f7';
-
-// HTML canvas dimensions (the CSS pixel dimensions used in HTML)
-const HTML_W = 550;
-const HTML_H = 850;
+const LINK_TARGET_MANIFEST = path.join(__dirname, 'output', 'link-targets.json');
 
 /**
  * Convert HTML pixel coordinates to PDF point coordinates.
@@ -22,9 +16,9 @@ const HTML_H = 850;
  *
  * @returns [x1, y1, x2, y2] in PDF points (bottom-left origin)
  */
-function htmlToPdf(htmlX, htmlY, htmlW, htmlH, pdfPageW, pdfPageH) {
-  const scaleX = pdfPageW / HTML_W;
-  const scaleY = pdfPageH / HTML_H;
+function htmlToPdf(htmlX, htmlY, htmlW, htmlH, pdfPageW, pdfPageH, htmlWidth, htmlHeight) {
+  const scaleX = pdfPageW / htmlWidth;
+  const scaleY = pdfPageH / htmlHeight;
 
   const x1 = htmlX * scaleX;
   const x2 = (htmlX + htmlW) * scaleX;
@@ -35,10 +29,10 @@ function htmlToPdf(htmlX, htmlY, htmlW, htmlH, pdfPageW, pdfPageH) {
   return [x1, y1, x2, y2];
 }
 
-function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url) {
+function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, htmlWidth, htmlHeight) {
   const page = pages[pageIndex];
   const { width: pw, height: ph } = page.getSize();
-  const rect = htmlToPdf(htmlX, htmlY, htmlW, htmlH, pw, ph);
+  const rect = htmlToPdf(htmlX, htmlY, htmlW, htmlH, pw, ph, htmlWidth, htmlHeight);
 
   const linkDict = pdfDoc.context.obj({
     Type: PDFName.of('Annot'),
@@ -60,11 +54,11 @@ function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url) {
   annots.push(ref);
 }
 
-function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, targetPageIndex) {
+function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, targetPageIndex, htmlWidth, htmlHeight) {
   const page = pages[pageIndex];
   const targetPage = pages[targetPageIndex];
   const { width: pw, height: ph } = page.getSize();
-  const rect = htmlToPdf(htmlX, htmlY, htmlW, htmlH, pw, ph);
+  const rect = htmlToPdf(htmlX, htmlY, htmlW, htmlH, pw, ph, htmlWidth, htmlHeight);
 
   const dest = pdfDoc.context.obj([
     targetPage.ref,
@@ -96,8 +90,12 @@ async function processPdf() {
     console.error('❌ Raw PDF not found. Run "node build.js" first.');
     process.exit(1);
   }
+  if (!fs.existsSync(LINK_TARGET_MANIFEST)) {
+    throw new Error('Link target manifest not found. Run "node build.js" first.');
+  }
 
   const pdfBytes = fs.readFileSync(INPUT_PDF);
+  const linkManifest = JSON.parse(fs.readFileSync(LINK_TARGET_MANIFEST, 'utf8'));
   const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
   const pages = pdfDoc.getPages();
   console.log(`📄 Loaded ${pages.length} pages`);
@@ -108,49 +106,23 @@ async function processPdf() {
     console.log(`   Page ${i + 1}: ${width.toFixed(1)} × ${height.toFixed(1)} pt`);
   });
 
-  // ═══════════════════════════════════════════════
-  // PAGE 1 (idx 0): COVER — Envelope → Page 3
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 1 — Cover');
-  addInternalLink(pages, pdfDoc, 0, 135, 330, 280, 190, 2);
-  console.log('   ✅ Envelope → Page 3');
-
-  // ═══════════════════════════════════════════════
-  // PAGE 2 (idx 1): SAVE THE DATE — Badge → Page 3
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 2 — Save the Date');
-  addInternalLink(pages, pdfDoc, 1, 230, 600, 90, 70, 2);
-  console.log('   ✅ E-Invitation badge → Page 3');
-
-  // ═══════════════════════════════════════════════
-  // PAGE 3 (idx 2): MONOGRAM — no links
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 3 — Monogram (no links)');
-
-  // ═══════════════════════════════════════════════
-  // PAGE 4 (idx 3): INVITATION — RSVP
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 4 — Invitation');
-  addLink(pages, pdfDoc, 3, 150, 600, 250, 50, RSVP_URL);
-  console.log('   ✅ RSVP → Google Form');
-
-  // ═══════════════════════════════════════════════
-  // PAGE 5 (idx 4): DETAILS — RSVP button
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 5 — Details');
-  addLink(pages, pdfDoc, 4, 225, 755, 100, 50, RSVP_URL);
-  console.log('   ✅ RSVP button → Google Form');
-
-  // ═══════════════════════════════════════════════
-  // PAGE 6 (idx 5): ROUTE — Map card + buttons
-  // ═══════════════════════════════════════════════
-  console.log('\n📌 Page 6 — Route');
-  addLink(pages, pdfDoc, 5, 30, 140, 490, 300, MAPS_URL);
-  console.log('   ✅ Map card → Google Maps');
-  addLink(pages, pdfDoc, 5, 165, 720, 80, 50, MAPS_URL);
-  console.log('   ✅ Location button → Google Maps');
-  addLink(pages, pdfDoc, 5, 285, 720, 80, 50, RSVP_URL);
-  console.log('   ✅ RSVP button → Google Form');
+  for (const target of linkManifest.targets) {
+    if (!pages[target.pageIndex]) {
+      throw new Error(`Link target ${target.selector} refers to a missing PDF page.`);
+    }
+    const { x, y, width, height, pageIndex, selector } = target;
+    if (target.target.type === 'external') {
+      addLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.url,
+        linkManifest.pageWidth, linkManifest.pageHeight);
+      console.log(`   ✅ ${selector} → ${target.target.url}`);
+    } else if (target.target.type === 'internal') {
+      addInternalLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.pageIndex,
+        linkManifest.pageWidth, linkManifest.pageHeight);
+      console.log(`   ✅ ${selector} → Page ${target.target.pageIndex + 1}`);
+    } else {
+      throw new Error(`Link target ${selector} has an unsupported target type.`);
+    }
+  }
 
   // ═══════════════════════════════════════════════
   // SAVE

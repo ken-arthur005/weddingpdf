@@ -3,27 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap');
 
 :root {
-  /* Purple palette */
-  --purple-deep: #6B3FA0;
-  --purple-primary: #8B6FA6;
-  --purple-mid: #A67FBF;
-  --purple-light: #C9A9D4;
-  --purple-pale: #E4D4ED;
-  --purple-tint: #F3ECF7;
-
-  /* Pink accents */
-  --pink-soft: #F0E0EA;
-  --pink-blush: #F5ECF1;
-  --pink-light: #FAF5F8;
-
-  /* Backgrounds */
-  --bg-cream: #FDFBF7;
-  --bg-white: #FFFFFF;
-
-  /* Text */
-  --text-dark: #3D2E50;
-  --text-mid: #6B5C7E;
-  --text-light: #9A8BAA;
+  /* Editorial wedding palette: ceremony burgundy, botanical green, warm ivory. */
+  --burgundy-deep: #4B1823;
+  --burgundy: #6B2030;
+  --burgundy-soft: #A65360;
+  --green-deep: #315342;
+  --green: #547761;
+  --green-soft: #A9C0AC;
+  --green-tint: #E8F0E8;
+  --ivory-deep: #EDE4D3;
+  --ivory-tint: #F7F2E8;
+  --bg-cream: #FCF9F1;
+  --bg-white: #FFFDF8;
+  --text-dark: #352326;
+  --text-mid: #625154;
+  --text-light: #897578;
 
   /* Fonts */
   --font-script: 'Great Vibes', cursive;
@@ -37,6 +31,24 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Guest names and venue information may contain long or non-Latin text. */
+.text-safe {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.pdf-action {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
 
 html, body {
   width: var(--page-w);
@@ -62,7 +74,7 @@ body::before {
 /* ===== Typography ===== */
 .script-lg {
   font-family: var(--font-script);
-  color: var(--purple-mid);
+  color: var(--burgundy);
   line-height: 1.1;
 }
 .serif-elegant {
@@ -76,7 +88,7 @@ body::before {
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--purple-primary);
+  color: var(--green-deep);
 }
 .sans-body {
   font-family: var(--font-sans);
@@ -101,12 +113,12 @@ body::before {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+  background: linear-gradient(90deg, transparent, var(--green-soft), transparent);
 }
 .ornament .diamond {
   width: 5px;
   height: 5px;
-  background: var(--purple-light);
+  background: var(--burgundy);
   transform: rotate(45deg);
   flex-shrink: 0;
 }
@@ -114,7 +126,7 @@ body::before {
 .gold-line {
   width: 100px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+  background: linear-gradient(90deg, transparent, var(--green-soft), transparent);
   margin: 10px auto;
 }
 
@@ -151,7 +163,7 @@ body::before {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--purple-light);
+  background: var(--burgundy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,7 +172,7 @@ body::before {
 .btn-circle svg {
   width: 15px;
   height: 15px;
-  fill: white;
+  fill: var(--bg-white);
 }
 .btn-text {
   font-family: var(--font-sans);
@@ -168,7 +180,7 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--purple-mid);
+  color: var(--burgundy);
 }
 
 /* ===== Floral Image Placeholders ===== */

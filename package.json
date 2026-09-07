@@ -4,7 +4,8 @@
   "description": "Interactive Wedding Invitation PDF",
   "scripts": {
     "render": "node build.js",
-    "build": "node build.js && node process-pdf.js"
+    "build": "node build.js && node process-pdf.js",
+    "verify": "node verify-pdf.js"
   },
   "dependencies": {
     "puppeteer": "^23.0.0",

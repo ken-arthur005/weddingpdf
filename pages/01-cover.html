@@ -16,12 +16,12 @@
     /* ── Florals ── */
     .floral-top {
       position: absolute; top: 0; left: 0; right: 0; height: 140px;
-      background: url('../assets/floralbg.png') center bottom / cover no-repeat;
+       background: url('../assets/botanical-corner.svg') center bottom / cover no-repeat;
       opacity: 0.6;
     }
     .floral-bottom {
       position: absolute; bottom: 60px; left: 0; right: 0; height: 110px;
-      background: url('../assets/floralbg2.png') center top / cover no-repeat;
+       background: url('../assets/botanical-ground.svg') center top / cover no-repeat;
       opacity: 0.5;
     }
 
@@ -31,7 +31,7 @@
       font-family: var(--font-serif);
       font-size: 13px; font-weight: 400;
       letter-spacing: 0.45em;
-      color: var(--purple-primary);
+       color: var(--green-deep);
       text-transform: uppercase;
     }
     .header .title {
@@ -45,7 +45,7 @@
     .header .of {
       font-family: var(--font-script);
       font-size: 36px;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       margin-top: 8px;
     }
 
@@ -72,15 +72,15 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 140px;
-      background: linear-gradient(135deg, #F8EFF5 0%, var(--pink-blush) 100%);
+       background: linear-gradient(135deg, var(--ivory-tint) 0%, var(--ivory-deep) 100%);
       border-radius: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       box-shadow:
-        0 6px 24px rgba(139,111,166,0.12),
-        0 1px 3px rgba(139,111,166,0.08);
+         0 6px 24px rgba(75,24,35,0.12),
+         0 1px 3px rgba(75,24,35,0.08);
     }
     .envelope-flap {
       position: absolute;
@@ -88,24 +88,24 @@
       height: 0;
       border-left: 140px solid transparent;
       border-right: 140px solid transparent;
-      border-top: 85px solid var(--pink-soft);
-      filter: drop-shadow(0 2px 4px rgba(139,111,166,0.06));
+       border-top: 85px solid var(--ivory-deep);
+       filter: drop-shadow(0 2px 4px rgba(75,24,35,0.06));
     }
     .envelope-body .tap {
       font-family: var(--font-script);
       font-size: 17px;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       margin-bottom: 8px;
     }
     .seal {
       width: 58px; height: 58px;
       border-radius: 50%;
-      background: white;
-      border: 2px solid var(--purple-light);
+       background: var(--bg-white);
+       border: 2px solid var(--green-soft);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 3px 12px rgba(139,111,166,0.15);
+       box-shadow: 0 3px 12px rgba(75,24,35,0.15);
     }
     .seal svg { width: 28px; height: 28px; }
     .seal-sub {
@@ -113,7 +113,7 @@
       font-size: 5px; font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--purple-light);
+       color: var(--green);
       margin-top: 5px;
     }
 
@@ -124,12 +124,12 @@
       font-size: 10px; font-weight: 600;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--purple-mid);
+       color: var(--burgundy);
     }
     .date-block .num {
       font-family: var(--font-serif);
       font-size: 72px; font-weight: 300;
-      color: var(--purple-mid);
+       color: var(--burgundy);
       line-height: 1;
       margin: 2px 0;
     }
@@ -138,12 +138,12 @@
       font-size: 11px; font-weight: 500;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--purple-primary);
+       color: var(--green-deep);
     }
     .date-block .year {
       font-family: var(--font-serif);
       font-size: 13px; font-weight: 300;
-      color: var(--purple-light);
+       color: var(--green);
       margin-top: 2px;
     }
     .date-block .time {
@@ -165,7 +165,7 @@
     <div class="of">of</div>
   </div>
 
-  <div class="couple">Kingsley<br>&amp;<br>Mary-Anne</div>
+  <div class="couple text-safe">Kingsley<br>&amp;<br>Lawrencia</div>
 
   <div class="envelope-wrap">
     <div class="envelope-flap"></div>
@@ -173,8 +173,8 @@
       <div class="tap">Tap here for</div>
       <div class="seal">
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <text x="8" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#8B6FA6" opacity="0.8">K</text>
-          <text x="22" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#A67FBF" opacity="0.7">A</text>
+          <text x="8" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#4B1823" opacity="0.8">K</text>
+          <text x="22" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#315342" opacity="0.7">L</text>
         </svg>
       </div>
       <div class="seal-sub">Wedding Invitation</div>

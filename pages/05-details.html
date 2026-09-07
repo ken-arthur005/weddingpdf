@@ -13,26 +13,26 @@
       background: var(--bg-cream);
     }
 
-    /* ── Purple Arch ── */
+    /* ── Burgundy Arch ── */
     .arch-wrap {
       width: 100%;
       padding: 0 24px 0;
       z-index: 2;
     }
     .arch {
-      background: linear-gradient(180deg, var(--purple-primary) 0%, #7A5E96 100%);
+      background: linear-gradient(180deg, var(--burgundy) 0%, var(--burgundy-deep) 100%);
       border-radius: 220px 220px 0 0;
       padding: 44px 32px 28px;
       text-align: center;
-      color: white;
-      box-shadow: 0 -4px 30px rgba(107,63,160,0.12);
+      color: var(--bg-white);
+      box-shadow: 0 -4px 30px rgba(75,24,35,0.12);
     }
 
     /* Heading */
     .arch .heading {
       font-family: var(--font-script);
       font-size: 44px;
-      color: white;
+      color: var(--bg-white);
       margin-bottom: 28px;
       text-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
@@ -44,7 +44,7 @@
       font-size: 9px; font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: white;
+      color: var(--bg-white);
       opacity: 0.92;
       margin-bottom: 5px;
     }
@@ -52,7 +52,7 @@
       font-family: var(--font-sans);
       font-size: 8.5px; font-weight: 300;
       line-height: 1.8;
-      color: white;
+      color: var(--bg-white);
       opacity: 0.82;
       letter-spacing: 0.03em;
     }
@@ -79,13 +79,13 @@
       font-size: 8px; font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--purple-mid);
+      color: var(--green-deep);
       margin-bottom: 4px;
     }
     .hash-tag {
       font-family: var(--font-serif);
       font-size: 22px; font-weight: 600;
-      color: var(--purple-deep);
+      color: var(--burgundy-deep);
       letter-spacing: 0.02em;
     }
 
@@ -96,7 +96,7 @@
     .floral-bot {
       position: absolute; bottom: 60px; left: 0; right: 0;
       height: 90px;
-      background: url('../assets/floralbg.png') center / cover no-repeat;
+      background: url('../assets/botanical-ground.svg') center / cover no-repeat;
       opacity: 0.3;
       z-index: 1;
     }
@@ -110,7 +110,7 @@
 
       <div class="sec">
         <div class="label">Dress Code</div>
-        <div class="text">
+        <div class="text text-safe">
           [DRESS CODE PLACEHOLDER]<br>
           Please join us in your beautiful<br>
           attire to celebrate the beauty of love
@@ -121,7 +121,7 @@
 
       <div class="sec">
         <div class="label">Ceremony</div>
-        <div class="text">
+        <div class="text text-safe">
           Ceremony is at Wesley Cathedral,<br>
           Sunyani · 10:00 AM
         </div>
@@ -131,7 +131,7 @@
 
       <div class="sec">
         <div class="label">Gifting</div>
-        <div class="text">
+        <div class="text text-safe">
           [GIFTING PLACEHOLDER]<br>
           The presence and prayers of our family and<br>
           friends is the greatest gift of all.
@@ -142,7 +142,7 @@
 
       <div class="sec">
         <div class="label">RSVP</div>
-        <div class="text">
+        <div class="text text-safe">
           To ensure we have enough arrangements<br>
           for you, kindly complete our RSVP<br>
           form with the button below.
@@ -160,12 +160,12 @@
 
   <!-- Bottom buttons -->
   <div class="btn-row">
-    <a class="btn-item" id="rsvp-btn-detail" href="#">
+    <button class="btn-item pdf-action" id="rsvp-btn-detail" type="button" aria-label="Open RSVP form">
       <div class="btn-circle">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       </div>
       <div class="btn-text">RSVP</div>
-    </a>
+    </button>
   </div>
 
 </body>

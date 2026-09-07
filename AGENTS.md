@@ -7,7 +7,7 @@ working external links (RSVP form, Google Maps location) and ideally internal
 navigation between sections.
 
 ## Design Direction
-- **Palette / mood:** Elegant gold & white
+- **Palette / mood:** Luxury burgundy, green, and white
 - **Length:** 4–8 pages/sections, e.g. cover, couple's story, event details,
   schedule, RSVP, location/directions, closing note
 - **Style:** Design-first. Prioritize visual polish (typography, spacing, gold
@@ -46,3 +46,21 @@ navigation between sections.
 - Flag clearly in output/comments which links are still placeholders vs. live.
 - Favor clean, easy-to-tweak CSS (variables for the gold/white palette) since design
   details may change as content comes in.
+
+## Design Context
+
+### Users
+Wedding guests, primarily opening the invitation from WhatsApp or another mobile PDF viewer. They need to understand the ceremony details, RSVP, and open directions without assistance.
+
+### Brand Personality
+Luxury, refined, and celebratory. The invitation should feel considered and premium while remaining clear for a phone-first audience.
+
+### Aesthetic Direction
+Use an editorial wedding-invitation system in burgundy, green, and white. The former purple floral direction is not the target. Avoid generic floral-template styling; prefer restrained, high-contrast typography and intentional decorative details.
+
+### Design Principles
+- Make the date, venue, RSVP, and map action immediately legible on a phone.
+- Use burgundy and green as purposeful accents on a warm white ground.
+- Create luxury through restraint, typography, spacing, and a consistent visual system.
+- Make PDF links visibly actionable and comfortably tappable.
+- Keep the invitation personal and ceremonial rather than app-like or template-like.
