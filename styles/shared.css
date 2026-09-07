@@ -1,6 +1,6 @@
 /* ===== Wedding Invite — Premium Shared Styles ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   /* Editorial wedding palette: ceremony burgundy, botanical green, warm ivory. */
@@ -18,12 +18,20 @@
   --text-dark: #352326;
   --text-mid: #625154;
   --text-light: #897578;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
 
   /* Fonts */
   --font-script: 'Great Vibes', cursive;
-  --font-script-alt: 'Pinyon Script', cursive;
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Montserrat', 'Segoe UI', sans-serif;
+  --type-caption: 0.6875rem;
+  --type-label: 0.75rem;
+  --type-body: 0.875rem;
+  --type-subheading: 1.125rem;
 
   /* Page size */
   --page-w: 550px;
@@ -57,6 +65,7 @@ html, body {
   background: var(--bg-cream);
   color: var(--text-dark);
   font-family: var(--font-serif);
+  font-kerning: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -85,18 +94,18 @@ body::before {
 .sans-label {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--green-deep);
 }
 .sans-body {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 11px;
+  font-size: var(--type-body);
   color: var(--text-mid);
-  line-height: 1.65;
-  letter-spacing: 0.04em;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 /* ===== Decorative Elements ===== */
@@ -130,57 +139,23 @@ body::before {
   margin: 10px auto;
 }
 
-/* ===== Shared Button Styles ===== */
-.btn-row {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* ===== Primary PDF Actions ===== */
+.action-button {
+  width: 100%;
+  min-height: 56px;
   display: flex;
-  justify-content: center;
-  gap: 36px;
-  padding: 14px 0 18px;
-  z-index: 10;
-}
-.btn-row::before {
-  content: '';
-  position: absolute;
-  top: -30px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: linear-gradient(to top, var(--bg-cream), transparent);
-  pointer-events: none;
-}
-.btn-item {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   text-decoration: none;
 }
-.btn-circle {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--burgundy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s;
-}
-.btn-circle svg {
-  width: 15px;
-  height: 15px;
-  fill: var(--bg-white);
-}
-.btn-text {
-  font-family: var(--font-sans);
-  font-size: 6.5px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--burgundy);
+.action-map {
+  background: var(--green-deep);
+  color: var(--bg-white);
 }
 
 /* ===== Floral Image Placeholders ===== */

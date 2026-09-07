@@ -37,8 +37,8 @@
     /* ── Heading ── */
     .heading {
       font-family: var(--font-serif);
-      font-size: 17px; font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: var(--type-subheading); font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-dark);
       margin-bottom: 22px;
@@ -72,8 +72,8 @@
     }
     .map-card .map-visual .pin-label {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 600;
-      letter-spacing: 0.15em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--green-deep);
     }
@@ -83,47 +83,25 @@
     }
     .map-card .map-info .m-name {
       font-family: var(--font-serif);
-      font-size: 14px; font-weight: 600;
+      font-size: var(--type-subheading); font-weight: 600;
       color: var(--text-dark);
     }
     .map-card .map-info .m-loc {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 400;
+      font-size: var(--type-label); font-weight: 400;
       color: var(--text-mid);
       margin-top: 2px;
     }
 
-    /* ── Bottom buttons ── */
-    .bottom-btns {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 14px;
-      z-index: 2;
-      position: relative;
-    }
-    .b-btn {
+    /* ── Actions ── */
+    .route-actions {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      text-decoration: none;
-    }
-    .b-btn .b-circle {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--burgundy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .b-btn .b-circle svg { width: 15px; height: 15px; fill: var(--bg-white); }
-    .b-btn .b-label {
-      font-family: var(--font-sans);
-      font-size: 6.5px; font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--burgundy);
+      gap: var(--space-sm);
+      width: min(100%, 320px);
+      margin: var(--space-lg) auto 0;
+      z-index: 2;
+      position: relative;
     }
 
     /* Floral bottom */
@@ -144,8 +122,7 @@
   <div class="content">
     <div class="heading">Route to Ceremony Venue</div>
 
-    <!-- Card 1 -->
-    <div class="map-card" id="map-link">
+    <div class="map-card">
       <div class="map-visual">
         <div class="pin-wrap">
           <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -160,19 +137,8 @@
 
     <div class="gold-line"></div>
 
-    <div class="bottom-btns">
-      <button class="b-btn pdf-action" id="loc-link" type="button" aria-label="Open venue in Google Maps">
-        <div class="b-circle">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        </div>
-        <div class="b-label">Location</div>
-      </button>
-      <button class="b-btn pdf-action" id="rsvp-route" type="button" aria-label="Open RSVP form">
-        <div class="b-circle">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <div class="b-label">RSVP</div>
-      </button>
+    <div class="route-actions">
+      <button class="action-button action-map pdf-action" id="loc-link" type="button" aria-label="Open venue in Google Maps">Open in Google Maps</button>
     </div>
   </div>
 

@@ -30,14 +30,14 @@
     .header .the {
       font-family: var(--font-serif);
       font-size: 13px; font-weight: 400;
-      letter-spacing: 0.45em;
+      letter-spacing: 0.22em;
        color: var(--green-deep);
       text-transform: uppercase;
     }
     .header .title {
       font-family: var(--font-serif);
       font-size: 20px; font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-dark);
       margin-top: 6px;
@@ -110,8 +110,8 @@
     .seal svg { width: 28px; height: 28px; }
     .seal-sub {
       font-family: var(--font-sans);
-      font-size: 5px; font-weight: 500;
-      letter-spacing: 0.08em;
+      font-size: var(--type-caption); font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
        color: var(--green);
       margin-top: 5px;
@@ -121,8 +121,8 @@
     .date-block { text-align: center; z-index: 2; }
     .date-block .day {
       font-family: var(--font-sans);
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.3em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
        color: var(--burgundy);
     }
@@ -135,8 +135,8 @@
     }
     .date-block .month {
       font-family: var(--font-sans);
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.35em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
        color: var(--green-deep);
     }
@@ -148,8 +148,8 @@
     }
     .date-block .time {
       font-family: var(--font-sans);
-      font-size: 9px; font-weight: 400;
-      letter-spacing: 0.12em;
+      font-size: var(--type-label); font-weight: 500;
+      letter-spacing: 0.06em;
       color: var(--text-mid);
       margin-top: 4px;
     }
@@ -170,14 +170,14 @@
   <div class="envelope-wrap">
     <div class="envelope-flap"></div>
     <div class="envelope-body" id="envelope-target">
-      <div class="tap">Tap here for</div>
+      <div class="tap">Open your</div>
       <div class="seal">
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <text x="8" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#4B1823" opacity="0.8">K</text>
           <text x="22" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#315342" opacity="0.7">L</text>
         </svg>
       </div>
-      <div class="seal-sub">Wedding Invitation</div>
+      <div class="seal-sub">Invitation</div>
     </div>
   </div>
 

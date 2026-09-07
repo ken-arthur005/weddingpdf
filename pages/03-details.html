@@ -41,8 +41,8 @@
     .sec { margin-bottom: 18px; }
     .sec .label {
       font-family: var(--font-sans);
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.22em;
+      font-size: var(--type-label); font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--bg-white);
       opacity: 0.92;
@@ -50,11 +50,11 @@
     }
     .sec .text {
       font-family: var(--font-sans);
-      font-size: 8.5px; font-weight: 300;
-      line-height: 1.8;
+      font-size: var(--type-body); font-weight: 400;
+      line-height: 1.6;
       color: var(--bg-white);
       opacity: 0.82;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.01em;
     }
     .divider {
       width: 36px; height: 1px;
@@ -70,14 +70,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 28px 30px 80px;
+      padding: var(--space-lg) 36px var(--space-xl);
       z-index: 2;
       position: relative;
     }
     .hash-label {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 500;
-      letter-spacing: 0.22em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--green-deep);
       margin-bottom: 4px;
@@ -88,9 +88,6 @@
       color: var(--burgundy-deep);
       letter-spacing: 0.02em;
     }
-
-    /* ── Bottom buttons ── */
-    .btn-row { z-index: 10; }
 
     /* Floral */
     .floral-bot {
@@ -107,17 +104,6 @@
   <div class="arch-wrap">
     <div class="arch">
       <div class="heading">Details</div>
-
-      <div class="sec">
-        <div class="label">Dress Code</div>
-        <div class="text text-safe">
-          [DRESS CODE PLACEHOLDER]<br>
-          Please join us in your beautiful<br>
-          attire to celebrate the beauty of love
-        </div>
-      </div>
-
-      <div class="divider"></div>
 
       <div class="sec">
         <div class="label">Ceremony</div>
@@ -138,35 +124,17 @@
         </div>
       </div>
 
-      <div class="divider"></div>
-
-      <div class="sec">
-        <div class="label">RSVP</div>
-        <div class="text text-safe">
-          To ensure we have enough arrangements<br>
-          for you, kindly complete our RSVP<br>
-          form with the button below.
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="bottom">
-    <div class="hash-label">Hashtag</div>
-    <div class="hash-tag">#CharKM26</div>
+    <div>
+      <div class="hash-label">Hashtag</div>
+      <div class="hash-tag">#CharKM26</div>
+    </div>
   </div>
 
   <div class="floral-bot"></div>
-
-  <!-- Bottom buttons -->
-  <div class="btn-row">
-    <button class="btn-item pdf-action" id="rsvp-btn-detail" type="button" aria-label="Open RSVP form">
-      <div class="btn-circle">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      </div>
-      <div class="btn-text">RSVP</div>
-    </button>
-  </div>
 
 </body>
 </html>

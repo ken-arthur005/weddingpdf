@@ -18,12 +18,12 @@ async function verifyPdf() {
 
   const pdfDoc = await PDFDocument.load(fs.readFileSync(PDF_PATH));
   const pages = pdfDoc.getPages();
-  if (pages.length !== 6) {
-    throw new Error(`Expected 6 PDF pages, found ${pages.length}.`);
+  if (pages.length !== 4) {
+    throw new Error(`Expected 4 PDF pages, found ${pages.length}.`);
   }
 
   for (const expected of LINK_TARGETS) {
-    const pageIndex = ['01-cover.html', '02-save-the-date.html', '03-monogram.html', '04-invitation.html', '05-details.html', '06-route.html']
+    const pageIndex = ['01-cover.html', '02-invitation.html', '03-details.html', '04-route.html']
       .indexOf(expected.file);
     const annotations = getAnnotations(pdfDoc, pages[pageIndex]);
     const matchingAction = annotations.some(annotation => {

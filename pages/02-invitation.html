@@ -52,8 +52,8 @@
     /* ── Together ── */
     .together {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 500;
-      letter-spacing: 0.28em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-mid);
       margin-bottom: 18px;
@@ -84,11 +84,11 @@
     /* ── Invite line ── */
     .invite {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 400;
-      letter-spacing: 0.22em;
+      font-size: var(--type-label); font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-       color: var(--burgundy);
-      line-height: 2.2;
+      color: var(--burgundy);
+      line-height: 1.6;
       margin-bottom: 16px;
     }
 
@@ -110,14 +110,14 @@
     }
     .venue .v-name {
       font-family: var(--font-sans);
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.18em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dark);
     }
     .venue .v-time {
       font-family: var(--font-sans);
-      font-size: 9px; font-weight: 300;
+      font-size: var(--type-label); font-weight: 400;
       color: var(--text-mid);
       margin-top: 2px;
     }
@@ -126,8 +126,8 @@
     .reception { margin: 14px 0; }
     .reception .r-label {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 500;
-      letter-spacing: 0.25em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
        color: var(--burgundy);
     }
@@ -139,34 +139,17 @@
     }
     .reception .r-at {
       font-family: var(--font-sans);
-      font-size: 8px; font-weight: 400;
-      letter-spacing: 0.2em;
+      font-size: var(--type-caption); font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
        color: var(--burgundy);
     }
     .reception .r-venue {
       font-family: var(--font-sans);
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.18em;
+      font-size: var(--type-label); font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dark);
-    }
-
-    /* ── RSVP ── */
-    .rsvp { margin: 14px 0 10px; }
-    .rsvp .rsvp-title {
-      font-family: var(--font-sans);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      margin-bottom: 3px;
-    }
-    .rsvp .rsvp-phone {
-      font-family: var(--font-sans);
-      font-size: 9px; font-weight: 400;
-      color: var(--text-mid);
-      letter-spacing: 0.05em;
     }
 
     /* ── Bible Verse ── */
@@ -225,13 +208,6 @@
       <div class="r-at">at</div>
       <div class="r-venue text-safe">Wesley Cathedral</div>
     </div>
-
-    <div class="ornament"><div class="diamond"></div></div>
-
-    <button class="rsvp pdf-action" id="rsvp-invite" type="button" aria-label="Open RSVP form">
-      <div class="rsvp-title">RSVP</div>
-      <div class="rsvp-phone">+233 55 101 1789</div>
-    </button>
 
     <div class="verse">
       <div class="v-text">"I have found the one whom my heart loves"</div>
