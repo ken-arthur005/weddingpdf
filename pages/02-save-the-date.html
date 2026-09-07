@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 50px 40px 80px;
+    }
+
+    /* ── Florals ── */
+    .floral-tr {
+      position: absolute; top: 0; right: 0;
+      width: 240px; height: 220px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.55;
+    }
+    .floral-bl {
+      position: absolute; bottom: 60px; left: 0;
+      width: 240px; height: 220px;
+      background: url('../assets/floralbg2.png') center / cover no-repeat;
+      opacity: 0.5;
+    }
+
+    /* ── Save the Date ── */
+    .std-heading {
+      font-family: var(--font-script);
+      font-size: 80px;
+      color: var(--purple-mid);
+      text-align: center;
+      line-height: 1.0;
+      z-index: 2;
+      margin-bottom: 30px;
+      text-shadow: 0 1px 2px rgba(139,111,166,0.08);
+    }
+
+    .sub-text {
+      text-align: center;
+      z-index: 2;
+      margin-bottom: 22px;
+    }
+    .sub-text span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-primary);
+      line-height: 2;
+    }
+
+    /* Names — bold serif */
+    .names {
+      font-family: var(--font-serif);
+      font-size: 38px; font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      text-align: center;
+      z-index: 2;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .ornament { z-index: 2; }
+
+    /* Event info */
+    .info {
+      text-align: center;
+      z-index: 2;
+    }
+    .info .date-line {
+      font-family: var(--font-serif);
+      font-size: 16px; font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .info .venue-line {
+      font-family: var(--font-sans);
+      font-size: 10px; font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* E-invitation badge */
+    .badge {
+      margin-top: 36px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge .circle {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .badge .circle svg { width: 18px; height: 18px; fill: white; }
+    .badge .label {
+      font-family: var(--font-sans);
+      font-size: 7px; font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floral-tr"></div>
+  <div class="floral-bl"></div>
+
+  <div class="std-heading">Save<br>the<br>Date</div>
+
+  <div class="sub-text">
+    <span>For the wedding</span>
+    <span>ceremony of</span>
+  </div>
+
+  <div class="names">Kingsley<br>&amp;<br>Mary-Anne</div>
+
+  <div class="ornament"><div class="diamond"></div></div>
+
+  <div class="info">
+    <div class="date-line">14th September 2026</div>
+    <div class="venue-line">Wesley Cathedral<br>Sunyani</div>
+  </div>
+
+  <div class="badge">
+    <div class="circle">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </div>
+    <div class="label">E-Invitation</div>
+  </div>
+
+</body>
+</html>

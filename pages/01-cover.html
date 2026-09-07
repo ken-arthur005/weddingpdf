@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 50px 50px 80px;
+    }
+
+    /* ── Florals ── */
+    .floral-top {
+      position: absolute; top: 0; left: 0; right: 0; height: 140px;
+      background: url('../assets/floralbg.png') center bottom / cover no-repeat;
+      opacity: 0.6;
+    }
+    .floral-bottom {
+      position: absolute; bottom: 60px; left: 0; right: 0; height: 110px;
+      background: url('../assets/floralbg2.png') center top / cover no-repeat;
+      opacity: 0.5;
+    }
+
+    /* ── Header ── */
+    .header { text-align: center; z-index: 2; margin-top: 10px; }
+    .header .the {
+      font-family: var(--font-serif);
+      font-size: 13px; font-weight: 400;
+      letter-spacing: 0.45em;
+      color: var(--purple-primary);
+      text-transform: uppercase;
+    }
+    .header .title {
+      font-family: var(--font-serif);
+      font-size: 20px; font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-top: 6px;
+    }
+    .header .of {
+      font-family: var(--font-script);
+      font-size: 36px;
+      color: var(--purple-mid);
+      margin-top: 8px;
+    }
+
+    /* ── Couple Names ── */
+    .couple {
+      font-family: var(--font-script);
+      font-size: 52px;
+      color: var(--text-dark);
+      text-align: center;
+      z-index: 2;
+      line-height: 1.15;
+      margin: 2px 0 28px;
+    }
+
+    /* ── Envelope ── */
+    .envelope-wrap {
+      position: relative;
+      width: 280px;
+      height: 190px;
+      z-index: 2;
+      margin-bottom: 36px;
+    }
+    .envelope-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 140px;
+      background: linear-gradient(135deg, #F8EFF5 0%, var(--pink-blush) 100%);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 6px 24px rgba(139,111,166,0.12),
+        0 1px 3px rgba(139,111,166,0.08);
+    }
+    .envelope-flap {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 0;
+      border-left: 140px solid transparent;
+      border-right: 140px solid transparent;
+      border-top: 85px solid var(--pink-soft);
+      filter: drop-shadow(0 2px 4px rgba(139,111,166,0.06));
+    }
+    .envelope-body .tap {
+      font-family: var(--font-script);
+      font-size: 17px;
+      color: var(--purple-mid);
+      margin-bottom: 8px;
+    }
+    .seal {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 12px rgba(139,111,166,0.15);
+    }
+    .seal svg { width: 28px; height: 28px; }
+    .seal-sub {
+      font-family: var(--font-sans);
+      font-size: 5px; font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-top: 5px;
+    }
+
+    /* ── Date Block ── */
+    .date-block { text-align: center; z-index: 2; }
+    .date-block .day {
+      font-family: var(--font-sans);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .date-block .num {
+      font-family: var(--font-serif);
+      font-size: 72px; font-weight: 300;
+      color: var(--purple-mid);
+      line-height: 1;
+      margin: 2px 0;
+    }
+    .date-block .month {
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--purple-primary);
+    }
+    .date-block .year {
+      font-family: var(--font-serif);
+      font-size: 13px; font-weight: 300;
+      color: var(--purple-light);
+      margin-top: 2px;
+    }
+    .date-block .time {
+      font-family: var(--font-sans);
+      font-size: 9px; font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--text-mid);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floral-top"></div>
+
+  <div class="header">
+    <div class="the">The</div>
+    <div class="title">Holy Matrimony</div>
+    <div class="of">of</div>
+  </div>
+
+  <div class="couple">Kingsley<br>&amp;<br>Mary-Anne</div>
+
+  <div class="envelope-wrap">
+    <div class="envelope-flap"></div>
+    <div class="envelope-body" id="envelope-target">
+      <div class="tap">Tap here for</div>
+      <div class="seal">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="8" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#8B6FA6" opacity="0.8">K</text>
+          <text x="22" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#A67FBF" opacity="0.7">A</text>
+        </svg>
+      </div>
+      <div class="seal-sub">Wedding Invitation</div>
+    </div>
+  </div>
+
+  <div class="date-block">
+    <div class="day">Saturday</div>
+    <div class="num">14</div>
+    <div class="month">September</div>
+    <div class="year">2026</div>
+    <div class="time">At 10:00 AM</div>
+  </div>
+
+  <div class="floral-bottom"></div>
+
+</body>
+</html>

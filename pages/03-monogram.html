@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 50px 50px 80px;
+    }
+
+    /* ── Florals ── */
+    .floral-bl {
+      position: absolute; bottom: 30px; left: -10px;
+      width: 200px; height: 190px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.45;
+    }
+    .floral-br {
+      position: absolute; bottom: 30px; right: -10px;
+      width: 200px; height: 190px;
+      background: url('../assets/floralbg2.png') center / cover no-repeat;
+      opacity: 0.45;
+    }
+
+    /* ── KA Monogram ── */
+    .monogram-wrap {
+      z-index: 2;
+      margin-bottom: 50px;
+    }
+    .monogram-wrap svg {
+      width: 260px;
+      height: 260px;
+      filter: drop-shadow(0 2px 8px rgba(107,63,160,0.1));
+    }
+
+    /* ── Invitation text ── */
+    .inv-text {
+      font-family: var(--font-serif);
+      font-size: 26px; font-weight: 300;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--purple-primary);
+      z-index: 2;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floral-bl"></div>
+  <div class="floral-br"></div>
+
+  <div class="monogram-wrap">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ka-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#6B3FA0;stop-opacity:0.9"/>
+          <stop offset="100%" style="stop-color:#A67FBF;stop-opacity:0.75"/>
+        </linearGradient>
+      </defs>
+      <!-- K -->
+      <text x="32" y="152" font-family="Cormorant Garamond, Georgia, serif"
+            font-size="148" font-weight="600" fill="url(#ka-grad)">K</text>
+      <!-- A overlapping -->
+      <text x="82" y="152" font-family="Cormorant Garamond, Georgia, serif"
+            font-size="148" font-weight="300" font-style="italic"
+            fill="#A67FBF" opacity="0.7">A</text>
+      <!-- Decorative curl -->
+      <path d="M55 95 Q90 55 135 80 Q115 105 95 90 Q75 78 55 95Z"
+            fill="none" stroke="#C9A9D4" stroke-width="0.8" opacity="0.4"/>
+      <path d="M65 140 Q95 165 125 135 Q105 110 95 125 Q80 112 65 140Z"
+            fill="none" stroke="#C9A9D4" stroke-width="0.8" opacity="0.35"/>
+    </svg>
+  </div>
+
+  <div class="inv-text">Invitation</div>
+
+</body>
+</html>

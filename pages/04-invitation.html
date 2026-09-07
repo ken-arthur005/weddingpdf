@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      padding: 32px 44px 80px;
+    }
+
+    /* ── Floral frame ── */
+    .floral-tl {
+      position: absolute; top: 0; left: 0;
+      width: 150px; height: 150px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.4;
+    }
+    .floral-tr {
+      position: absolute; top: 0; right: 0;
+      width: 150px; height: 150px;
+      background: url('../assets/floralbg2.png') center / cover no-repeat;
+      opacity: 0.4;
+    }
+    .floral-bl {
+      position: absolute; bottom: 60px; left: 0;
+      width: 150px; height: 150px;
+      background: url('../assets/floralbg2.png') center / cover no-repeat;
+      opacity: 0.4;
+    }
+    .floral-br {
+      position: absolute; bottom: 60px; right: 0;
+      width: 150px; height: 150px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.4;
+    }
+
+    .content {
+      position: relative; z-index: 2;
+      text-align: center; width: 100%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    /* ── Mini monogram ── */
+    .mini-mono { margin-bottom: 10px; }
+    .mini-mono svg { width: 70px; height: 70px; }
+
+    /* ── Together ── */
+    .together {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 18px;
+    }
+
+    /* ── Names ── */
+    .name-script {
+      font-family: var(--font-script);
+      font-size: 36px;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+    .name-and {
+      font-family: var(--font-serif);
+      font-size: 14px; font-weight: 300;
+      font-style: italic;
+      color: var(--purple-mid);
+      margin-bottom: 2px;
+    }
+    .name-serif {
+      font-family: var(--font-serif);
+      font-size: 17px; font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    /* ── Invite line ── */
+    .invite {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      line-height: 2.2;
+      margin-bottom: 16px;
+    }
+
+    /* ── Date ── */
+    .date-val {
+      font-family: var(--font-serif);
+      font-size: 17px; font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    /* ── Venue with pin ── */
+    .venue { margin-bottom: 4px; }
+    .venue svg.pin {
+      width: 18px; height: 18px;
+      fill: var(--purple-mid);
+      margin-bottom: 6px;
+    }
+    .venue .v-name {
+      font-family: var(--font-sans);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+    .venue .v-time {
+      font-family: var(--font-sans);
+      font-size: 9px; font-weight: 300;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+
+    /* ── Reception ── */
+    .reception { margin: 14px 0; }
+    .reception .r-label {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .reception .r-script {
+      font-family: var(--font-script);
+      font-size: 32px;
+      color: var(--purple-mid);
+      line-height: 1.1;
+    }
+    .reception .r-at {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .reception .r-venue {
+      font-family: var(--font-sans);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+
+    /* ── RSVP ── */
+    .rsvp { margin: 14px 0 10px; }
+    .rsvp .rsvp-title {
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+    .rsvp .rsvp-phone {
+      font-family: var(--font-sans);
+      font-size: 9px; font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Bible Verse ── */
+    .verse { margin-top: 16px; text-align: center; }
+    .verse .v-text {
+      font-family: var(--font-script);
+      font-size: 17px;
+      color: var(--purple-mid);
+      line-height: 1.4;
+    }
+    .verse .v-ref {
+      font-family: var(--font-serif);
+      font-size: 16px; font-weight: 600;
+      color: var(--purple-deep);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floral-tl"></div>
+  <div class="floral-tr"></div>
+  <div class="floral-bl"></div>
+  <div class="floral-br"></div>
+
+  <div class="content">
+
+    <div class="mini-mono">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <text x="6" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#8B6FA6" opacity="0.8">K</text>
+        <text x="20" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#A67FBF" opacity="0.7">A</text>
+      </svg>
+    </div>
+
+    <div class="together">Together with their families</div>
+
+    <div class="name-script">Kingsley Asare Baafi</div>
+    <div class="name-and">and</div>
+    <div class="name-serif">Mary-Anne Smith</div>
+
+    <div class="invite">Invite you to their wedding<br>celebration</div>
+
+    <div class="ornament"><div class="diamond"></div></div>
+
+    <div class="date-val">14th September 2026</div>
+
+    <div class="venue">
+      <svg class="pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <div class="v-name">Wesley Cathedral</div>
+      <div class="v-time">Sunyani · 10:00 AM</div>
+    </div>
+
+    <div class="reception">
+      <div class="r-label">Reception</div>
+      <div class="r-script">to follow</div>
+      <div class="r-at">at</div>
+      <div class="r-venue">Wesley Cathedral</div>
+    </div>
+
+    <div class="ornament"><div class="diamond"></div></div>
+
+    <div class="rsvp">
+      <div class="rsvp-title">RSVP</div>
+      <div class="rsvp-phone">+233 55 101 1789</div>
+    </div>
+
+    <div class="verse">
+      <div class="v-text">"I have found the one whom my heart loves"</div>
+      <div class="v-ref">Songs of Solomon 3:4</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

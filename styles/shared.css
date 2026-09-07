@@ -1,0 +1,179 @@
+/* ===== Wedding Invite — Premium Shared Styles ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+:root {
+  /* Purple palette */
+  --purple-deep: #6B3FA0;
+  --purple-primary: #8B6FA6;
+  --purple-mid: #A67FBF;
+  --purple-light: #C9A9D4;
+  --purple-pale: #E4D4ED;
+  --purple-tint: #F3ECF7;
+
+  /* Pink accents */
+  --pink-soft: #F0E0EA;
+  --pink-blush: #F5ECF1;
+  --pink-light: #FAF5F8;
+
+  /* Backgrounds */
+  --bg-cream: #FDFBF7;
+  --bg-white: #FFFFFF;
+
+  /* Text */
+  --text-dark: #3D2E50;
+  --text-mid: #6B5C7E;
+  --text-light: #9A8BAA;
+
+  /* Fonts */
+  --font-script: 'Great Vibes', cursive;
+  --font-script-alt: 'Pinyon Script', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Montserrat', 'Segoe UI', sans-serif;
+
+  /* Page size */
+  --page-w: 550px;
+  --page-h: 850px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: var(--page-w);
+  height: var(--page-h);
+  overflow: hidden;
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle linen texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23B89CC8' fill-opacity='0.025'%3E%3Cpath d='M0 0h1v1H0zM40 0h1v1h-1zM0 40h1v1H0zM40 40h1v1h-1zM20 20h1v1h-1zM60 20h1v1h-1zM20 60h1v1h-1zM60 60h1v1h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Typography ===== */
+.script-lg {
+  font-family: var(--font-script);
+  color: var(--purple-mid);
+  line-height: 1.1;
+}
+.serif-elegant {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--text-dark);
+}
+.sans-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purple-primary);
+}
+.sans-body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  letter-spacing: 0.04em;
+}
+
+/* ===== Decorative Elements ===== */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px auto;
+  width: 160px;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+}
+.ornament .diamond {
+  width: 5px;
+  height: 5px;
+  background: var(--purple-light);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.gold-line {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+  margin: 10px auto;
+}
+
+/* ===== Shared Button Styles ===== */
+.btn-row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 14px 0 18px;
+  z-index: 10;
+}
+.btn-row::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to top, var(--bg-cream), transparent);
+  pointer-events: none;
+}
+.btn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+.btn-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--purple-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.btn-circle svg {
+  width: 15px;
+  height: 15px;
+  fill: white;
+}
+.btn-text {
+  font-family: var(--font-sans);
+  font-size: 6.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-mid);
+}
+
+/* ===== Floral Image Placeholders ===== */
+.floral {
+  position: absolute;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}

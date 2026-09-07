@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      position: relative;
+      background: var(--bg-cream);
+    }
+
+    /* ── Purple Arch ── */
+    .arch-wrap {
+      width: 100%;
+      padding: 0 24px 0;
+      z-index: 2;
+    }
+    .arch {
+      background: linear-gradient(180deg, var(--purple-primary) 0%, #7A5E96 100%);
+      border-radius: 220px 220px 0 0;
+      padding: 44px 32px 28px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 -4px 30px rgba(107,63,160,0.12);
+    }
+
+    /* Heading */
+    .arch .heading {
+      font-family: var(--font-script);
+      font-size: 44px;
+      color: white;
+      margin-bottom: 28px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Section */
+    .sec { margin-bottom: 18px; }
+    .sec .label {
+      font-family: var(--font-sans);
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: white;
+      opacity: 0.92;
+      margin-bottom: 5px;
+    }
+    .sec .text {
+      font-family: var(--font-sans);
+      font-size: 8.5px; font-weight: 300;
+      line-height: 1.8;
+      color: white;
+      opacity: 0.82;
+      letter-spacing: 0.03em;
+    }
+    .divider {
+      width: 36px; height: 1px;
+      background: rgba(255,255,255,0.25);
+      margin: 10px auto;
+    }
+
+    /* ── Bottom area ── */
+    .bottom {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 28px 30px 80px;
+      z-index: 2;
+      position: relative;
+    }
+    .hash-label {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 4px;
+    }
+    .hash-tag {
+      font-family: var(--font-serif);
+      font-size: 22px; font-weight: 600;
+      color: var(--purple-deep);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Bottom buttons ── */
+    .btn-row { z-index: 10; }
+
+    /* Floral */
+    .floral-bot {
+      position: absolute; bottom: 60px; left: 0; right: 0;
+      height: 90px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.3;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="arch-wrap">
+    <div class="arch">
+      <div class="heading">Details</div>
+
+      <div class="sec">
+        <div class="label">Dress Code</div>
+        <div class="text">
+          [DRESS CODE PLACEHOLDER]<br>
+          Please join us in your beautiful<br>
+          attire to celebrate the beauty of love
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sec">
+        <div class="label">Ceremony</div>
+        <div class="text">
+          Ceremony is at Wesley Cathedral,<br>
+          Sunyani · 10:00 AM
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sec">
+        <div class="label">Gifting</div>
+        <div class="text">
+          [GIFTING PLACEHOLDER]<br>
+          The presence and prayers of our family and<br>
+          friends is the greatest gift of all.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="sec">
+        <div class="label">RSVP</div>
+        <div class="text">
+          To ensure we have enough arrangements<br>
+          for you, kindly complete our RSVP<br>
+          form with the button below.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="hash-label">Hashtag</div>
+    <div class="hash-tag">#CharKM26</div>
+  </div>
+
+  <div class="floral-bot"></div>
+
+  <!-- Bottom buttons -->
+  <div class="btn-row">
+    <a class="btn-item" id="rsvp-btn-detail" href="#">
+      <div class="btn-circle">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="btn-text">RSVP</div>
+    </a>
+  </div>
+
+</body>
+</html>

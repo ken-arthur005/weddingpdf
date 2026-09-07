@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 28px 28px 80px;
+      background: var(--pink-light);
+    }
+
+    /* ── Florals ── */
+    .floral-l {
+      position: absolute; top: 60px; left: -15px;
+      width: 130px; height: 200px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.38;
+      z-index: 1;
+    }
+    .floral-r {
+      position: absolute; top: 60px; right: -15px;
+      width: 130px; height: 200px;
+      background: url('../assets/floralbg2.png') center / cover no-repeat;
+      opacity: 0.38;
+      z-index: 1;
+    }
+
+    .content {
+      position: relative; z-index: 2;
+      width: 100%; text-align: center;
+    }
+
+    /* ── Heading ── */
+    .heading {
+      font-family: var(--font-serif);
+      font-size: 17px; font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 22px;
+    }
+
+    /* ── Map Card ── */
+    .map-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(107,63,160,0.1);
+      margin-bottom: 16px;
+    }
+    .map-card .map-visual {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--purple-tint) 0%, var(--pink-blush) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-card .map-visual .pin-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .map-card .map-visual .pin-icon {
+      width: 28px; height: 28px;
+      fill: var(--purple-primary);
+    }
+    .map-card .map-visual .pin-label {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-primary);
+    }
+    .map-card .map-info {
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .map-card .map-info .m-name {
+      font-family: var(--font-serif);
+      font-size: 14px; font-weight: 600;
+      color: var(--text-dark);
+    }
+    .map-card .map-info .m-loc {
+      font-family: var(--font-sans);
+      font-size: 8px; font-weight: 400;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+
+    /* ── Bottom buttons ── */
+    .bottom-btns {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 14px;
+      z-index: 2;
+      position: relative;
+    }
+    .b-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .b-btn .b-circle {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .b-btn .b-circle svg { width: 15px; height: 15px; fill: white; }
+    .b-btn .b-label {
+      font-family: var(--font-sans);
+      font-size: 6.5px; font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+
+    /* Floral bottom */
+    .floral-bot {
+      position: absolute; bottom: 60px; left: 0; right: 0;
+      height: 80px;
+      background: url('../assets/floralbg.png') center / cover no-repeat;
+      opacity: 0.25;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floral-l"></div>
+  <div class="floral-r"></div>
+
+  <div class="content">
+    <div class="heading">Route to Ceremony Venue</div>
+
+    <!-- Card 1 -->
+    <div class="map-card">
+      <div class="map-visual">
+        <div class="pin-wrap">
+          <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div class="pin-label">Wesley Cathedral</div>
+        </div>
+      </div>
+      <div class="map-info">
+        <div class="m-name">Wesley Cathedral</div>
+        <div class="m-loc">Sunyani, Ghana</div>
+      </div>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="bottom-btns">
+      <a class="b-btn" id="loc-link">
+        <div class="b-circle">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="b-label">Location</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="floral-bot"></div>
+
+</body>
+</html>

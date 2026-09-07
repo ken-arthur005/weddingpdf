@@ -1,0 +1,13 @@
+{
+  "name": "wedding-invite",
+  "version": "1.0.0",
+  "description": "Interactive Wedding Invitation PDF",
+  "scripts": {
+    "render": "node build.js",
+    "build": "node build.js && node process-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0",
+    "pdf-lib": "^1.17.1"
+  }
+}
