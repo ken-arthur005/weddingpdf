@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 const INPUT_PDF = path.join(__dirname, 'output', 'wedding-invite-raw.pdf');
-const OUTPUT_PDF = path.join(__dirname, 'output', 'wedding-invite.pdf');
+const OUTPUT_PDF = process.env.WEDDING_PDF_OUTPUT
+  ? path.resolve(process.env.WEDDING_PDF_OUTPUT)
+  : path.join(__dirname, 'output', 'wedding-invite.pdf');
 const LINK_TARGET_MANIFEST = path.join(__dirname, 'output', 'link-targets.json');
 
 /**
@@ -39,7 +41,10 @@ function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, html
     Subtype: PDFName.of('Link'),
     Rect: rect,
     Border: pdfDoc.context.obj([0, 0, 0]),
+    H: PDFName.of('I'),
+    F: 4,
     A: pdfDoc.context.obj({
+      Type: PDFName.of('Action'),
       S: PDFName.of('URI'),
       URI: PDFString.of(url),
     }),
@@ -70,7 +75,13 @@ function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, t
     Subtype: PDFName.of('Link'),
     Rect: rect,
     Border: pdfDoc.context.obj([0, 0, 0]),
-    Dest: dest,
+    H: PDFName.of('I'),
+    F: 4,
+    A: pdfDoc.context.obj({
+      Type: PDFName.of('Action'),
+      S: PDFName.of('GoTo'),
+      D: dest,
+    }),
   });
 
   const ref = pdfDoc.context.register(linkDict);

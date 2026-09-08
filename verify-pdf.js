@@ -3,7 +3,9 @@ const path = require('path');
 const { PDFDocument, PDFName } = require('pdf-lib');
 const { LINK_TARGETS } = require('./link-targets');
 
-const PDF_PATH = path.join(__dirname, 'output', 'wedding-invite.pdf');
+const PDF_PATH = process.env.WEDDING_PDF_OUTPUT
+  ? path.resolve(process.env.WEDDING_PDF_OUTPUT)
+  : path.join(__dirname, 'output', 'wedding-invite.pdf');
 
 function getAnnotations(pdfDoc, page) {
   const annotations = page.node.get(PDFName.of('Annots'));
@@ -18,17 +20,18 @@ async function verifyPdf() {
 
   const pdfDoc = await PDFDocument.load(fs.readFileSync(PDF_PATH));
   const pages = pdfDoc.getPages();
-  if (pages.length !== 3) {
-    throw new Error(`Expected 3 PDF pages, found ${pages.length}.`);
+  if (pages.length !== 4) {
+    throw new Error(`Expected 4 PDF pages, found ${pages.length}.`);
   }
 
   for (const expected of LINK_TARGETS) {
-    const pageIndex = ['01-cover.html', '02-invitation.html', '03-route.html']
+    const pageIndex = ['01-cover.html', '02-invitation.html', '03-details.html', '04-route.html']
       .indexOf(expected.file);
     const annotations = getAnnotations(pdfDoc, pages[pageIndex]);
     const matchingAction = annotations.some(annotation => {
       if (expected.target.type === 'internal') {
-        return Boolean(annotation.get(PDFName.of('Dest')));
+        const action = annotation.get(PDFName.of('A'));
+        return action && action.toString().includes('/GoTo');
       }
       const action = annotation.get(PDFName.of('A'));
       return action && action.toString().includes(expected.target.url);

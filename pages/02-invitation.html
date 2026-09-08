@@ -8,8 +8,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      padding: 56px 44px 80px;
+      padding: var(--space-2xl);
     }
 
     .content {
@@ -18,9 +17,7 @@
     }
 
     .eyebrow,
-    .invite,
-    .reception-label,
-    .hashtag {
+    .invite {
       font-family: var(--font-sans);
       font-size: var(--type-label);
       font-weight: 600;
@@ -30,74 +27,29 @@
 
     .eyebrow {
       color: var(--text-mid);
-      margin-bottom: 26px;
+      margin-bottom: var(--space-xl);
     }
 
     .name {
       font-family: var(--font-serif);
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 500;
-      color: var(--text-dark);
       letter-spacing: 0.03em;
+      color: var(--text-dark);
     }
 
     .and {
       font-family: var(--font-serif);
-      font-size: 16px;
+      font-size: var(--type-body);
       font-style: italic;
       color: var(--burgundy);
-      margin: 4px 0;
+      margin: var(--space-xs) 0;
     }
 
     .invite {
       color: var(--burgundy);
       line-height: 1.6;
-      margin: 26px 0 16px;
-    }
-
-    .date {
-      font-family: var(--font-serif);
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-dark);
-      margin-bottom: 16px;
-    }
-
-    .venue-name,
-    .reception-venue {
-      font-family: var(--font-sans);
-      font-size: var(--type-label);
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-    }
-
-    .venue-time,
-    .reception-detail {
-      font-family: var(--font-sans);
-      font-size: var(--type-label);
-      color: var(--text-mid);
-      margin-top: 4px;
-    }
-
-    .reception {
-      margin-top: 28px;
-    }
-
-    .reception-label {
-      color: var(--burgundy);
-      margin-bottom: 6px;
-    }
-
-    .hashtag {
-      position: absolute;
-      bottom: 38px;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      color: var(--green-deep);
+      margin-top: var(--space-2xl);
     }
   </style>
 </head>
@@ -107,21 +59,7 @@
     <div class="name text-safe">Kingsley Asare Baafi</div>
     <div class="and">and</div>
     <div class="name text-safe">Lawrencia Smith</div>
-
     <div class="invite">Invite you to their wedding<br>celebration</div>
-    <div class="ornament"><div class="diamond"></div></div>
-
-    <div class="date">14th September 2026</div>
-    <div class="venue-name text-safe">Wesley Cathedral</div>
-    <div class="venue-time">Sunyani · 10:00 AM</div>
-
-    <div class="reception">
-      <div class="reception-label">Reception</div>
-      <div class="reception-detail">To follow at</div>
-      <div class="reception-venue text-safe">Wesley Cathedral</div>
-    </div>
   </div>
-
-  <div class="hashtag text-safe">#KingLaw</div>
 </body>
 </html>

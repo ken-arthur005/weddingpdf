@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: var(--space-2xl);
+    }
+
+    .content {
+      width: 100%;
+      text-align: center;
+    }
+
+    .heading,
+    .hashtag {
+      font-family: var(--font-sans);
+      font-size: var(--type-label);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .heading {
+      color: var(--burgundy);
+      margin-bottom: var(--space-lg);
+    }
+
+    .date {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-dark);
+    }
+
+    .ornament {
+      margin: var(--space-xl) auto;
+    }
+
+    .venue-name {
+      font-family: var(--font-sans);
+      font-size: var(--type-label);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+
+    .venue-time {
+      font-family: var(--font-sans);
+      font-size: var(--type-label);
+      color: var(--text-mid);
+      margin-top: var(--space-xs);
+    }
+
+    .hashtag {
+      position: absolute;
+      bottom: var(--space-2xl);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      color: var(--green-deep);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="heading">Wedding Ceremony</div>
+    <div class="date">14th September 2026</div>
+    <div class="ornament"><div class="diamond"></div></div>
+    <div class="venue-name text-safe">Wesley Cathedral</div>
+    <div class="venue-time">Sunyani · 10:00 AM</div>
+  </div>
+  <div class="hashtag text-safe">#KingLaw</div>
+</body>
+</html>
