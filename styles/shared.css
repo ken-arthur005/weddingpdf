@@ -3,21 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Editorial wedding palette: ceremony burgundy, botanical green, warm ivory. */
-  --burgundy-deep: #4B1823;
-  --burgundy: #6B2030;
-  --burgundy-soft: #A65360;
-  --green-deep: #315342;
-  --green: #547761;
-  --green-soft: #A9C0AC;
-  --green-tint: #E8F0E8;
-  --ivory-deep: #EDE4D3;
-  --ivory-tint: #F7F2E8;
-  --bg-cream: #FCF9F1;
-  --bg-white: #FFFDF8;
-  --text-dark: #352326;
-  --text-mid: #625154;
-  --text-light: #897578;
+  /* Night-garden palette: wine field, champagne foil, and botanical foliage. */
+  --burgundy-deep: #321019;
+  --burgundy: #5A1828;
+  --burgundy-soft: #7D3041;
+  --green-deep: #173D2E;
+  --green: #3F684F;
+  --green-soft: #8FB178;
+  --green-tint: #D6DFC0;
+  --gold-deep: #B88B3E;
+  --gold: #D5B66F;
+  --champagne: #F2E5C8;
+  --ivory-deep: #E9DAB8;
+  --ivory-tint: #F6EEDC;
+  --bg-cream: #5A1828;
+  --bg-white: #F6EEDC;
+  --text-dark: #F2E5C8;
+  --text-mid: #DEC99B;
+  --text-light: #BA9B67;
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
@@ -65,13 +68,56 @@ html, body {
   width: var(--page-w);
   height: var(--page-h);
   overflow: hidden;
-  background: var(--bg-cream);
+  background: var(--burgundy);
   color: var(--text-dark);
   font-family: var(--font-serif);
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Page-specific florals sit behind content and retain their original proportions. */
+.page {
+  position: relative;
+  isolation: isolate;
+}
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.2;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .96 0 0 0 0 .88 0 0 0 0 .73 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+.floral-art {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.page:not(.page-04) .floral-art { opacity: 0.6; }
+.page-02 .floral-art { opacity: 0.5; }
+.floral-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.floral-art--top-center { top: 0; left: 50%; width: 100%; transform: translateX(-50%); }
+.floral-art--bottom-center { bottom: 0; left: 50%; width: 550px; transform: translateX(-50%); }
+.floral-art--left-edge { top: 0; left: 0; height: 100%; }
+.floral-art--right-edge { top: 0; right: 0; height: 100%; }
+.floral-art--top-left { top: 0; left: 0; width: 330px; }
+.floral-art--bottom-right { right: 0; bottom: 0; width: 330px; }
+.floral-art--bottom-frame { right: 0; bottom: 0; left: 0; width: 100%; }
+.floral-art--page-two { top: 50%; left: 0; width: 100%; transform: translateY(-50%); }
+
+/* These source files have a white canvas; multiply lets it disappear into burgundy. */
+.floral-art--multiply { mix-blend-mode: multiply; }
+.floral-art--left-edge img,
+.floral-art--right-edge img { width: auto; height: 100%; }
 
 /* ===== Decorative Elements ===== */
 .ornament {
@@ -87,12 +133,12 @@ html, body {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green-soft), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 .ornament .diamond {
   width: 5px;
   height: 5px;
-  background: var(--burgundy);
+  background: var(--green-soft);
   transform: rotate(45deg);
   flex-shrink: 0;
 }
@@ -113,5 +159,6 @@ html, body {
 }
 .action-map {
   background: var(--green-deep);
-  color: var(--bg-white);
+  border: 1px solid var(--green-soft);
+  color: var(--champagne);
 }

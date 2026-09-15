@@ -31,7 +31,7 @@ function htmlToPdf(htmlX, htmlY, htmlW, htmlH, pdfPageW, pdfPageH, htmlWidth, ht
   return [x1, y1, x2, y2];
 }
 
-function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, htmlWidth, htmlHeight) {
+function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, label, htmlWidth, htmlHeight) {
   const page = pages[pageIndex];
   const { width: pw, height: ph } = page.getSize();
   const rect = htmlToPdf(htmlX, htmlY, htmlW, htmlH, pw, ph, htmlWidth, htmlHeight);
@@ -39,10 +39,12 @@ function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, html
   const linkDict = pdfDoc.context.obj({
     Type: PDFName.of('Annot'),
     Subtype: PDFName.of('Link'),
+    P: page.ref,
     Rect: rect,
     Border: pdfDoc.context.obj([0, 0, 0]),
     H: PDFName.of('I'),
     F: 4,
+    Contents: PDFString.of(label),
     A: pdfDoc.context.obj({
       Type: PDFName.of('Action'),
       S: PDFName.of('URI'),
@@ -59,7 +61,7 @@ function addLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, url, html
   annots.push(ref);
 }
 
-function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, targetPageIndex, htmlWidth, htmlHeight) {
+function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, targetPageIndex, label, htmlWidth, htmlHeight) {
   const page = pages[pageIndex];
   const targetPage = pages[targetPageIndex];
   const { width: pw, height: ph } = page.getSize();
@@ -73,10 +75,12 @@ function addInternalLink(pages, pdfDoc, pageIndex, htmlX, htmlY, htmlW, htmlH, t
   const linkDict = pdfDoc.context.obj({
     Type: PDFName.of('Annot'),
     Subtype: PDFName.of('Link'),
+    P: page.ref,
     Rect: rect,
     Border: pdfDoc.context.obj([0, 0, 0]),
     H: PDFName.of('I'),
     F: 4,
+    Contents: PDFString.of(label),
     A: pdfDoc.context.obj({
       Type: PDFName.of('Action'),
       S: PDFName.of('GoTo'),
@@ -123,11 +127,11 @@ async function processPdf() {
     }
     const { x, y, width, height, pageIndex, selector } = target;
     if (target.target.type === 'external') {
-      addLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.url,
+      addLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.url, target.target.label,
         linkManifest.pageWidth, linkManifest.pageHeight);
       console.log(`   ✅ ${selector} → ${target.target.url}`);
     } else if (target.target.type === 'internal') {
-      addInternalLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.pageIndex,
+      addInternalLink(pages, pdfDoc, pageIndex, x, y, width, height, target.target.pageIndex, target.target.label,
         linkManifest.pageWidth, linkManifest.pageHeight);
       console.log(`   ✅ ${selector} → Page ${target.target.pageIndex + 1}`);
     } else {

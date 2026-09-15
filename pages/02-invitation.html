@@ -9,11 +9,14 @@
       align-items: center;
       justify-content: center;
       padding: var(--space-2xl);
+      position: relative;
     }
 
     .content {
       width: 100%;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow,
@@ -26,7 +29,7 @@
     }
 
     .eyebrow {
-      color: var(--text-mid);
+       color: var(--green-tint);
       margin-bottom: var(--space-xl);
     }
 
@@ -35,25 +38,27 @@
       font-size: 34px;
       font-weight: 500;
       letter-spacing: 0.03em;
-      color: var(--text-dark);
+       color: var(--champagne);
     }
 
     .and {
       font-family: var(--font-serif);
       font-size: var(--type-body);
       font-style: italic;
-      color: var(--burgundy);
+       color: var(--gold);
       margin: var(--space-xs) 0;
     }
 
     .invite {
-      color: var(--burgundy);
-      line-height: 1.6;
-      margin-top: var(--space-2xl);
+       color: var(--gold);
+       line-height: 1.6;
+       margin-top: var(--space-2xl);
     }
+
   </style>
 </head>
-<body>
+<body class="page page-02">
+  <div class="floral-art floral-art--page-two" aria-hidden="true"><img src="../assets/page2.png" alt=""></div>
   <div class="content">
     <div class="eyebrow">Together with their families</div>
     <div class="name text-safe">Kingsley Asare Baafi</div>

@@ -10,28 +10,18 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding: 50px 50px 80px;
-    }
-
-    /* ── Florals ── */
-    .floral-top {
-      position: absolute; top: 0; left: 0; right: 0; height: 140px;
-       background: url('../assets/botanical-corner.svg') center bottom / cover no-repeat;
-      opacity: 0.6;
-    }
-    .floral-bottom {
-      position: absolute; bottom: 60px; left: 0; right: 0; height: 110px;
-       background: url('../assets/botanical-ground.svg') center top / cover no-repeat;
-      opacity: 0.5;
+       padding: 50px 50px 80px;
+       background: var(--burgundy);
     }
 
     /* ── Header ── */
+    .page-01 > :not(.floral-art) { transform: translateY(36px); }
     .header { text-align: center; z-index: 2; margin-top: 10px; }
     .header .the {
       font-family: var(--font-serif);
       font-size: 13px; font-weight: 400;
       letter-spacing: 0.22em;
-       color: var(--green-deep);
+       color: var(--green-tint);
       text-transform: uppercase;
     }
     .header .title {
@@ -39,14 +29,14 @@
       font-size: 20px; font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-dark);
+       color: var(--champagne);
       margin-top: 6px;
     }
     .header .of {
       font-family: var(--font-serif);
       font-style: italic;
       font-size: 36px;
-       color: var(--burgundy);
+       color: var(--gold);
       margin-top: 8px;
     }
 
@@ -55,7 +45,7 @@
       font-family: var(--font-serif);
       font-style: italic;
       font-size: 52px;
-      color: var(--text-dark);
+       color: var(--champagne);
       text-align: center;
       z-index: 2;
       line-height: 1.15;
@@ -66,51 +56,12 @@
     .envelope-wrap {
       position: relative;
       width: 280px;
-      height: 190px;
+      height: 215px;
       z-index: 2;
       margin-bottom: 36px;
     }
-    .envelope-body {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 140px;
-       background: linear-gradient(135deg, var(--ivory-tint) 0%, var(--ivory-deep) 100%);
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow:
-         0 6px 24px rgba(75,24,35,0.12),
-         0 1px 3px rgba(75,24,35,0.08);
-    }
-    .envelope-flap {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 0;
-      border-left: 140px solid transparent;
-      border-right: 140px solid transparent;
-       border-top: 85px solid var(--ivory-deep);
-       filter: drop-shadow(0 2px 4px rgba(75,24,35,0.06));
-    }
-    .envelope-body .tap {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 17px;
-       color: var(--burgundy);
-      margin-bottom: 8px;
-    }
-    .seal {
-      width: 58px; height: 58px;
-      border-radius: 50%;
-       background: var(--bg-white);
-       border: 2px solid var(--green-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-       box-shadow: 0 3px 12px rgba(75,24,35,0.15);
-    }
-    .seal svg { width: 28px; height: 28px; }
+    .envelope-wrap > div,
+    .envelope-wrap img { display: block; width: 100%; height: 100%; }
 
     /* ── Date Block ── */
     .date-block { text-align: center; z-index: 2; }
@@ -119,12 +70,12 @@
       font-size: var(--type-label); font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-       color: var(--burgundy);
+       color: var(--gold);
     }
     .date-block .num {
       font-family: var(--font-serif);
       font-size: 72px; font-weight: 300;
-       color: var(--burgundy);
+       color: var(--champagne);
       line-height: 1;
       margin: 2px 0;
     }
@@ -133,12 +84,12 @@
       font-size: var(--type-label); font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-       color: var(--green-deep);
+       color: var(--green-tint);
     }
     .date-block .year {
       font-family: var(--font-serif);
       font-size: 13px; font-weight: 300;
-       color: var(--green);
+       color: var(--gold);
       margin-top: 2px;
     }
     .date-block .time {
@@ -150,9 +101,8 @@
     }
   </style>
 </head>
-<body>
-
-  <div class="floral-top"></div>
+<body class="page page-01">
+  <div class="floral-art floral-art--top-center" aria-hidden="true"><img src="../assets/page1top.png" alt=""></div>
 
   <div class="header">
     <div class="the">The</div>
@@ -163,16 +113,7 @@
   <div class="couple text-safe">Kingsley<br>&amp;<br>Lawrencia</div>
 
   <div class="envelope-wrap">
-    <div class="envelope-flap"></div>
-    <div class="envelope-body" id="envelope-target">
-        <div class="tap">Tap to view invitation</div>
-      <div class="seal">
-        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <text x="8" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="600" fill="#4B1823" opacity="0.8">K</text>
-          <text x="22" y="46" font-family="Cormorant Garamond, serif" font-size="42" font-weight="300" font-style="italic" fill="#315342" opacity="0.7">L</text>
-        </svg>
-      </div>
-    </div>
+    <div id="envelope-target"><img src="../assets/envelope.png" alt="Tap to view invitation"></div>
   </div>
 
   <div class="date-block">
@@ -182,8 +123,6 @@
     <div class="year">2026</div>
     <div class="time">At 10:00 AM</div>
   </div>
-
-  <div class="floral-bottom"></div>
 
 </body>
 </html>

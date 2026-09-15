@@ -7,7 +7,7 @@
     body {
       position: relative;
       padding: var(--space-2xl) var(--space-2xl) var(--space-3xl);
-      background: var(--ivory-tint);
+       background: var(--burgundy);
     }
 
     .content {
@@ -39,7 +39,7 @@
     }
 
     .heading {
-      color: var(--burgundy);
+       color: var(--gold);
       margin-bottom: var(--space-sm);
     }
 
@@ -47,7 +47,7 @@
       font-family: var(--font-serif);
       font-size: 38px;
       font-weight: 500;
-      color: var(--text-dark);
+       color: var(--champagne);
       line-height: 1;
     }
 
@@ -62,7 +62,7 @@
       width: var(--space-4xl);
       height: 1px;
       margin-top: var(--space-2xl);
-      background: var(--green-soft);
+       background: var(--gold);
     }
 
     .route-actions {
@@ -75,26 +75,17 @@
     }
 
     .route-label {
-      color: var(--green-deep);
+       color: var(--green-tint);
     }
 
     .action-button {
       width: min(100%, 320px);
     }
 
-    .floral-bot {
-      position: absolute;
-      bottom: var(--space-2xl);
-      right: 0;
-      width: 260px;
-      height: 104px;
-      background: url('../assets/botanical-ground.svg') right bottom / cover no-repeat;
-      opacity: 0.16;
-      pointer-events: none;
-    }
   </style>
 </head>
-<body>
+<body class="page page-04">
+  <div class="floral-art floral-art--bottom-frame" aria-hidden="true"><img src="../assets/page4bottom.png" alt=""></div>
   <div class="content">
     <div class="venue-block">
       <div class="heading">Ceremony Venue</div>
@@ -109,6 +100,5 @@
       <a class="action-button action-map pdf-action" id="loc-link" href="https://maps.app.goo.gl/fb5JWYKorDAH574f7" aria-label="Open Wesley Cathedral in Google Maps">Open in Google Maps</a>
     </div>
   </div>
-  <div class="floral-bot"></div>
 </body>
 </html>

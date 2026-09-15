@@ -7,19 +7,21 @@
       "selector": "#envelope-target",
       "target": {
         "type": "internal",
-        "pageIndex": 1
+        "pageIndex": 1,
+        "label": "Open wedding invitation"
       },
       "x": 135,
-      "y": 433.8999938964844,
+      "y": 407.3999938964844,
       "width": 280,
-      "height": 140
+      "height": 215
     },
     {
       "pageIndex": 3,
       "selector": "#loc-link",
       "target": {
         "type": "external",
-        "url": "https://maps.app.goo.gl/fb5JWYKorDAH574f7"
+        "url": "https://maps.app.goo.gl/fb5JWYKorDAH574f7",
+        "label": "Open Wesley Cathedral in Google Maps"
       },
       "x": 48,
       "y": 730,
